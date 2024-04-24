@@ -24,3 +24,6 @@ cd px/mix
 printf "file '%s'\n" * > files.txt
 <edit files.txt>
 ffmpeg -f concat -safe 0 -i files.txt -c:v libx264 -r 30 -pix_fmt yuv420p copy output.mp4
+
+### Compress video
+ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
